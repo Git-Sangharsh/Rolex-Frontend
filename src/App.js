@@ -11,14 +11,14 @@ const App = () => {
   return (
     <div className="App">
       <Helmet>
-      <title>The Rolex Collection | Watches</title>
-        <Nav />
-        <Rolexwatches />
-        <Explore />
-        <Watches />
-
-        <Footer />
+        <title>The Rolex Collection | Watches</title>
       </Helmet>
+      <Nav />
+      <Rolexwatches />
+      <Explore />
+      <Watches />
+
+      <Footer />
     </div>
   );
 };
