@@ -15,6 +15,20 @@
   width: 100%;
   height: 110px;
   user-select: none;
+  background: rgb(19, 77, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(19, 77, 0, 1) 0%,
+    rgba(39, 121, 9, 1) 70%,
+    rgba(109, 210, 100, 1) 100%
+  );
+  background: rgb(12, 66, 42);
+  background: linear-gradient(
+    90deg,
+    rgba(12, 66, 42, 1) 0%,
+    rgba(18, 89, 57, 1) 69%,
+    rgba(47, 139, 97, 1) 100%
+  );
 }
 
 .second-nav {
@@ -155,7 +169,6 @@
   }
 }
 
-
 @media (max-width: 425px) {
   .hide-second-nav {
     height: 60px;
@@ -165,10 +178,9 @@
     font-size: 10px;
   }
 
-  .category{
+  .category {
     text-align: center;
   }
-
 }
 
 @media (max-width: 375px) {
@@ -179,31 +191,35 @@
   .configure > h1 {
     font-size: 8px;
   }
-  .category{
+  .category {
     text-align: center;
   }
-
 }
 
 @media (max-width: 320px) {
-
-
-  .nav-wrapper{
+  .nav-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 320px;
+    background: rgb(12, 66, 42);
+    background: linear-gradient(
+      90deg,
+      rgba(12, 66, 42, 1) 0%,
+      rgba(18, 89, 57, 1) 69%,
+      rgba(47, 139, 97, 1) 100%
+    );
   }
 
-  .icon-class{
+  .icon-class {
     width: 17px;
   }
   .menu {
-    width:  33.33vw;
+    width: 33.33vw;
   }
 
   .logo {
-    width:  33.33vw;
+    width: 33.33vw;
   }
 
   .search {
@@ -218,8 +234,7 @@
     font-size: 10px;
     margin: 0px 5px;
   }
-  .category{
+  .category {
     text-align: center;
   }
-
 }
