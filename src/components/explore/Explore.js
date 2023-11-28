@@ -23,7 +23,7 @@ const Explore = () => {
           </motion.h1>
         </div>
 
-        <div>
+        <div className="parent-explore">
           <motion.h1
             className="explore-p"
             initial={{ y: 30, opacity: 0 }}
