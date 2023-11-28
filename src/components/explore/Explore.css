@@ -111,7 +111,19 @@
 
 
 }
+@media (max-width: 300px){
 
+  .parent-explore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .explore-p{
+    width: 60%;
+    font-weight: 800;
+  }
+}
 @media (max-width: 290px){
 
   .parent-explore{
