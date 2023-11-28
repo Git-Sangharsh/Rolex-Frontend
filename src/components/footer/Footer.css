@@ -1,0 +1,31 @@
+
+.footer {
+    display: flex;
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    position: relative; /* Make sure relative positioning is set for absolute positioning of the background image */
+}
+
+.footer-wrapper {
+  position: relative;
+}
+
+.footerbg{
+    width: 100%;
+}
+
+.footer-text{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    z-index: 1000;
+}
+
+.footer-header{
+    color: #F8F8F8;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 45px;
+    margin: 0;
+    padding: 0;
+}
+

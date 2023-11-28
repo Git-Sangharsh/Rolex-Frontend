@@ -1,0 +1,23 @@
+      <Parallax strength={600} bgImage={mountain1}>
+        <div className="content">
+          <div className="text-content">
+            Noraml Parralax
+          </div>
+        </div>
+      </Parallax>
+
+      <Parallax strength={300} blur={{ min: -5, max: 1}} bgImage={mountain2}>
+        <div className="content">
+          <div className="text-content">
+            Blur Parralax
+          </div>
+        </div>
+      </Parallax>
+
+      <Parallax strength={-600} bgImage={mountain3}>
+        <div className="content">
+          <div className="text-content">
+            Reverse Parralax
+          </div>
+        </div>
+      </Parallax>

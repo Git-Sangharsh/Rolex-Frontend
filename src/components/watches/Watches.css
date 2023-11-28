@@ -1,0 +1,156 @@
+.category {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.catogory-headers,
+.configure-headers {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0px 20px;
+  font-size: 18px;
+}
+
+.configure-headers {
+  background-color: #105033;
+  padding: 4px 10px;
+  border-radius: 30px;
+  color: #f8f8f8;
+}
+
+.watch-second-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  background-color: #ffffff;
+}
+.watches-map {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  /* display: flex;
+    align-items: center;
+    justify-content: center; */
+}
+
+.map-img {
+  width: 100%;
+  scale: 1.1;
+  overflow: hidden;
+}
+
+.map-content {
+  position: absolute;
+  top: 60%;
+  left: 9%;
+}
+
+.watch-name {
+  color: #212121;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 45px;
+  margin: 0;
+  padding: 0;
+}
+
+.watch-white-name {
+  color: #f8f8f8;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 45px;
+  margin: 0;
+  padding: 0;
+}
+
+.watch-description {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgb(53, 53, 53);
+  font-size: 30px;
+  margin: 10px 0px;
+  font-weight: 100;
+  padding: 0;
+}
+
+.watch-white-description {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #f8f8f8;
+  font-size: 30px;
+  margin: 10px 0px;
+  font-weight: 100;
+  padding: 0;
+}
+
+.watch-more {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #212121;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+.watch-white-more {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #f8f8f8;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .common-name {
+    font-size: 40px;
+  }
+
+  .common-description {
+    font-size: 25px;
+  }
+
+  .common-more {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .common-name {
+    font-size: 40px;
+  }
+
+  .common-description {
+    font-size: 25px;
+  }
+
+  .common-more {
+    font-size: 15px;
+  }
+
+  .map-img {
+    height: 350px;
+    scale: 1.2;
+    overflow: hidden;
+    background-image: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .watches-map{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .conatainer1{
+    border: 4px solid black;
+  }
+}
+
+@media (max-width: 425px) {
+  .watch-second-nav {
+    display: none;
+  }
+}

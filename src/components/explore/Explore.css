@@ -1,0 +1,104 @@
+.explore-div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 100px 0px;
+  }
+
+  .explore-header {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 45px;
+    color: #176740;
+    font-style: normal;
+    font-variant: normal;
+    padding: 0;
+    margin: 20px 0px;
+  }
+
+  .explore-p {
+    font-family: Raleway;
+    font-weight: 100;
+    font-size: 20px;
+    color: rgb(110, 110, 110);
+  }
+
+  .find-rolex {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #176740;
+    font-size: 16px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: bolder;
+    padding: 0;
+  }
+@media (max-width: 1024px){
+
+  .explore-div{
+    margin: 90px 0px;
+  }
+  .explore-header {
+    font-size: 40px;
+  }
+
+  .explore-p {
+    font-size: 16px;
+    line-height: 160%;
+    padding: 25px 0px;
+  }
+}
+
+@media (max-width: 768px){
+
+  .explore-div{
+    margin: 30px 0px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .explore-header {
+    font-size: 32px;
+  }
+
+  .explore-p {
+    font-size: 16px;
+    line-height: 160%;
+    padding: 25px 0px;
+  }
+}
+
+
+@media (max-width: 425px){
+
+  .explore-div{
+    margin: 30px 0px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .explore-header {
+    font-size: 32px;
+  }
+
+  .explore-p {
+    font-size: 14px;
+    line-height: 160%;
+    padding: 25px 0px;
+  }
+}
+
+@media (max-width: 320px){
+
+  .explore-div{
+    margin: 30px 0px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .explore-header {
+    font-size: 25px;
+  }
+
+  .explore-p {
+    font-size: 10px;
+    line-height: 160%;
+    padding: 0px 0px;
+  }
+}

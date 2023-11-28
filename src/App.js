@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Nav from "./components/navbar/Nav";
+import Rolexwatches from "./components/Rolexwatches/Rolexwatches";
+import Explore from "./components/explore/Explore";
+import Watches from "./components/watches/Watches";
+import Footer from "./components/footer/Footer";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <Rolexwatches />
+      <Explore />
+      <Watches />
+
+        <Footer />
     </div>
   );
-}
+};
 
 export default App;
