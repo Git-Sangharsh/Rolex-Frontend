@@ -13,6 +13,7 @@ const Watches = () => {
 
   return (
     <div className="watches">
+      <h1>Hello World</h1>
       <div className="wathches-wrapper">
         <motion.div
           // className="second-nav"
