@@ -4,6 +4,7 @@
     align-items: center; /* Vertical centering */
     justify-content: center; /* Horizontal centering */
     position: relative; /* Make sure relative positioning is set for absolute positioning of the background image */
+    background-color: #105033;
 }
 
 .footer-wrapper {
@@ -29,3 +30,29 @@
     padding: 0;
 }
 
+
+@media (max-width: 768px){
+    .footer-header{
+        font-size: 40px;
+    }
+}
+
+
+@media (max-width: 635px){
+    .footer-header{
+        font-size: 35px;
+    }
+}
+
+
+@media (max-width: 425px){
+    .footer-header{
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 375px){
+    .footer-header{
+        font-size: 18px;
+    }
+}

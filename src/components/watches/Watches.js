@@ -13,7 +13,6 @@ const Watches = () => {
 
   return (
     <div className="watches">
-      <h1>Hello World</h1>
       <div className="wathches-wrapper">
         <motion.div
           // className="second-nav"
@@ -34,6 +33,7 @@ const Watches = () => {
           {data?.map((i) => (
             <div className="watches-map" key={i.id}>
               <img src={i.img} alt="" className="map-img" />
+              <img src={i.responsive} alt="" className="map-responsive"/>
               <motion.div
                 className="map-content"
                 initial={{ y: 30, opacity: 0 }}

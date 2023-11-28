@@ -186,12 +186,37 @@
 }
 
 @media (max-width: 320px) {
+
+
+  .nav-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 320px;
+  }
+
+  .icon-class{
+    width: 17px;
+  }
+  .menu {
+    width:  33.33vw;
+  }
+
+  .logo {
+    width:  33.33vw;
+  }
+
+  .search {
+    width: 33.33vw;
+  }
+
   .hide-second-nav {
     height: 60px;
   }
   .category > h1,
   .configure > h1 {
     font-size: 10px;
+    margin: 0px 5px;
   }
   .category{
     text-align: center;

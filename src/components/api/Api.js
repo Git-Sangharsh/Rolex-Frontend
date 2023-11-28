@@ -13,6 +13,21 @@ import watch12 from "../assets/watch12.jpg";
 import watch13 from "../assets/watch13.jpg";
 import watch14 from "../assets/watch14.jpg";
 
+import height1 from '../assets/height1.jpg'
+import height2 from '../assets/height2.jpg'
+import height3 from '../assets/height3.jpg'
+import height4 from '../assets/height4.jpg'
+import height5 from '../assets/height5.jpg'
+import height6 from '../assets/height6.jpg'
+import height7 from '../assets/height7.jpg'
+import height8 from '../assets/height8.jpg'
+import height9 from '../assets/height9.jpg'
+import height10 from '../assets/height10.jpg'
+import height11 from '../assets/height11.jpg'
+import height12 from '../assets/height12.jpg'
+import height13 from '../assets/height13.jpg'
+import height14 from '../assets/height14.jpg'
+
 const api = [
   {
     id: 1,
@@ -21,6 +36,7 @@ const api = [
     description: "A watch for the dates to remember",
     more: "Discover more >",
     clr: "",
+    responsive: height1
   },
   {
     id: 2,
@@ -29,6 +45,8 @@ const api = [
     description: "The supreme diver's watch",
     more: "Discover more >",
     clr: "white",
+    responsive: height2
+
   },
   {
     id: 3,
@@ -37,6 +55,8 @@ const api = [
     description: "Two time-zones, two-colours, uniquely iconic",
     more: "Discover more >",
     clr: "white",
+    responsive: height3
+
   },
   {
     id: 4,
@@ -45,6 +65,8 @@ const api = [
     description: "A witenss to some of History's most pivotal moments",
     more: "Discover more >",
     clr: "white",
+    responsive: height4
+
   },
   {
     id: 5,
@@ -53,6 +75,8 @@ const api = [
     description: "A watch for the dates to remember",
     more: "Discover more >",
     clr: "white",
+    responsive: height5
+
   },
   {
     id: 6,
@@ -61,6 +85,8 @@ const api = [
     description: "A watch for the dates to remember",
     more: "Discover more >",
     clr: "",
+    responsive: height6
+
   },
   {
     id: 7,
@@ -69,6 +95,8 @@ const api = [
     description: "A watch for the dates to remember",
     more: "Discover more >",
     clr: "white",
+    responsive: height7
+
   },
   {
     id: 8,
@@ -77,6 +105,7 @@ const api = [
     description: "A watch for the dates to remember",
     more: "Discover more >",
     clr: "white",
+    responsive: height8
   },
   {
     id: 9,
@@ -85,6 +114,7 @@ const api = [
     description: "A watch for the dates to remember",
     more: "Discover more >",
     clr: "white",
+    responsive: height9
   },
   {
     id: 10,
@@ -93,6 +123,8 @@ const api = [
     description: "An ever-imporeved pioneers of skies",
     more: "Discover more >",
     clr: "white",
+    responsive: height10
+
   },
   {
     id: 11,
@@ -101,6 +133,8 @@ const api = [
     description: "Unrelenting ally to face it all",
     more: "Discover more >",
     clr: "",
+    responsive: height11
+
   },
   {
     id: 12,
@@ -109,6 +143,7 @@ const api = [
     description: "Confidence carried with grace",
     more: "Discover more >",
     clr: "",
+    responsive: height12
   },
   {
     id: 13,
@@ -117,6 +152,7 @@ const api = [
     description: "With the world as its time-zone",
     more: "Discover more >",
     clr: "white",
+    responsive: height13
   },
   {
     id: 14,
@@ -125,6 +161,7 @@ const api = [
     description: "The new face of excellence",
     more: "Discover more >",
     clr: "white",
+    responsive: height14
   },
 ];
 
