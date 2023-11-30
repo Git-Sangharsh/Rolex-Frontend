@@ -288,6 +288,10 @@
   .configure > h1 {
     font-size: 10px;
   }
+  .catogory-headers{
+    font-size: 8px !important;
+    margin: 0px 10px !important;
+  }
 
   .category {
     text-align: center;
@@ -304,6 +308,9 @@
   }
   .category {
     text-align: center;
+  }
+  .catogory-headers{
+    font-size: 8px !important;
   }
 
   .drop-menu-headers{
@@ -354,5 +361,9 @@
   }
   .category {
     text-align: center;
+  }
+
+  .catogory-headers{
+    font-size: 10px !important;
   }
 }

@@ -117,7 +117,7 @@ const Nav = () => {
             {dropdown ? (
               <div>
                 <div className="row " onClick={dropdownClick}>
-                  <X className="close-show-nav-scroll" />
+                  <X className="close-show-nav-scroll icon-class" />
                   <h1 className="catogory-headers">Close</h1>{" "}
                 </div>
               </div>
