@@ -7,6 +7,101 @@
   width: 100%;
 }
 
+.menu-dropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 100%;
+  z-index: 999;
+  background: rgb(12, 66, 42);
+  background: linear-gradient(
+    90deg,
+    rgba(12, 66, 42, 1) 0%,
+    rgba(18, 89, 57, 1) 69%,
+    rgba(47, 139, 97, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.drop-menu-headers{
+  color: #FFFFFF;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  line-height: 10px;
+  padding: 20px 0px;
+}
+
+.drop-menu-right{
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.swiper-slide {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  height: 40vh !important;
+  overflow: hidden !important;
+  user-select: none !important;
+}
+
+
+.swiper-button-prev, .swiper-button-next{
+  color: rgb(12, 66, 42);
+  padding: 10px;
+  color: white !important;
+  background-color: transparent;
+  width: 40px !important;
+}
+.menu-child-img{
+  width: 100%;
+  scale: 1.2;
+  transition: 1s ease-in-out;
+  padding-top: 20px;
+}
+.menu-child-img:hover{
+  scale: 1.3;
+  cursor: grab;
+}
+.hide-menu-dropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 80%;
+  width: 100%;
+  z-index: 999;
+  background: rgb(12, 66, 42);
+  background: linear-gradient(
+    90deg,
+    rgba(12, 66, 42, 1) 0%,
+    rgba(18, 89, 57, 1) 69%,
+    rgba(47, 139, 97, 1) 100%
+  );
+}
+
+.close-show-nav-scroll{
+  color: red !important;
+}
+/* hiding close header */
+.hide-header{
+  display: none;
+}
+
+.catogory-headers{
+  cursor: pointer;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  font-weight: lighter
+}
 .nav-wrapper {
   display: flex;
   align-items: center;
@@ -120,6 +215,9 @@
     width: 10px;
   }
 
+  .drop-menu-headers{
+    font-size: 16px;
+  }
   .menu-header {
     width: 33.33%;
     visibility: visible;
@@ -131,6 +229,9 @@
     height: 80px;
   }
 
+  .mySwiper, .none{
+    display: none !important;
+  }
   .headers {
     /* visibility: hidden; */
     width: 10px;
@@ -203,6 +304,13 @@
   }
   .category {
     text-align: center;
+  }
+
+  .drop-menu-headers{
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 0px;
+    margin-left: 60px;
   }
 }
 

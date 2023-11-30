@@ -1,21 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Nav.css";
 import rolexlogo from "../assets/rolexlogo.png";
-import { Search, MapPin, Heart } from "lucide-react";
+import { Search, MapPin, Heart, X } from "lucide-react";
 import { GanttChart } from "lucide-react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import api from "../api/Api";
+
+// Import Swiper
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import { Navigation } from "swiper/modules";
 
 const Nav = () => {
+  //swiper
+
   const { scrollY } = useScroll();
 
   const [hidden, setHidden] = useState(false);
 
   const [secondNav, setSecondNav] = useState(false);
 
+  const [menuWatches, setMenuWatches] = useState(false);
+
+  useEffect(() => {
+    setMenuWatches(api);
+  }, []);
+
   useMotionValueEvent(scrollY, "change", (latest) => {
-    console.log("scroll y postion is", latest);
+    // console.log("scroll y postion is", latest);
     const previous = scrollY.getPrevious();
-    console.log("scroll previous is ", previous);
+    // console.log("scroll previous is ", previous);
     if (latest > previous && latest > 150) {
       setHidden(true);
     } else if (latest > 912 && previous > latest) {
@@ -29,64 +46,151 @@ const Nav = () => {
     }
   });
 
-  console.log("hidden state is ", hidden);
+  const [dropdown, setDropdown] = useState(false);
+  const dropdownClick = () => {
+    setDropdown((prevDropdown) => {
+      console.log("dropdown is ", !prevDropdown);
+      document.documentElement.style.overflow = !prevDropdown
+        ? "hidden"
+        : "auto";
+      document.body.style.overflow = !prevDropdown ? "hidden" : "auto"; // For some older browsers
+      return !prevDropdown;
+    });
+  };
+
+  // console.log("hidden state is ", hidden);
   return (
-    <motion.div
-      variants={{
-        visible: { y: 0,   },
-        hidden: { y: "-100%" },
-      }}
-      animate={hidden ? "hidden" : "visible"}
-      transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="nav"
-    >
-      <div className="nav-wrapper">
-        <div className="menu">
-          <div className="row">
-            <GanttChart className="icon-class" />
-            <h1 className="headers">Menu</h1>
-          </div>
-        </div>
-        <div className="logo">
-          <img src={rolexlogo} className="logoimage" alt="" />
-        </div>
-        <div className="search">
-          <div className="row">
-            <Search className="icon-class" />
-            <h1 className="headers">Search</h1>
-          </div>
-          <div className="row">
-            <MapPin className="icon-class" />
-            <h1 className="headers">Store locator</h1>
-          </div>
-          <div className="row">
-            <Heart className="icon-class" />
-            <h1 className="headers">Favourites</h1>
-          </div>
-        </div>
-      </div>
+    <div className="parent-nav">
       <motion.div
-        className={secondNav ? "hide-second-nav" : "second-nav"}
         variants={{
-          visible: { y: 0,},
-          hidden: {
-            y: secondNav ? 0 : "-100%",
-          },
+          visible: { y: 0 },
+          hidden: { y: "-100%" },
         }}
         animate={hidden ? "hidden" : "visible"}
         transition={{ duration: 0.35, ease: "easeInOut" }}
+        className="nav"
       >
-        <div className="category">
-          <h1 className="catogory-headers">All</h1>
-          <h1 className="catogory-headers">Classic</h1>
-          <h1 className="catogory-headers">Professional</h1>
-          {/* <h1 className="catogory-headers">Watches by theme</h1> */}
+        <div className="nav-wrapper">
+          <div className="menu">
+            {dropdown ? (
+              <div className="row " onClick={dropdownClick}>
+                <X className="icon-class" />
+                <h1 className="headers">Close</h1>
+              </div>
+            ) : (
+              <div className="row " onClick={dropdownClick}>
+                <GanttChart className="icon-class" />
+                <h1 className="headers">Menu</h1>
+              </div>
+            )}
+          </div>
+          <div className="logo">
+            <img src={rolexlogo} className="logoimage" alt="" />
+          </div>
+          <div className="search">
+            <div className="row">
+              <Search className="icon-class" />
+              <h1 className="headers">Search</h1>
+            </div>
+            <div className="row">
+              <MapPin className="icon-class" />
+              <h1 className="headers">Store locator</h1>
+            </div>
+            <div className="row">
+              <Heart className="icon-class" />
+              <h1 className="headers">Favourites</h1>
+            </div>
+          </div>
         </div>
-        <div className="configure">
-          <h1 className="configure-headers">Configure</h1>
-        </div>
+        <motion.div
+          className={secondNav ? "hide-second-nav" : "second-nav"}
+          variants={{
+            visible: { y: 0 },
+            hidden: {
+              y: secondNav ? 0 : "-100%",
+            },
+          }}
+          animate={hidden ? "hidden" : "visible"}
+          transition={{ duration: 0.35, ease: "easeInOut" }}
+        >
+          <div className="category">
+            {dropdown ? (
+              <div>
+                <div className="row " onClick={dropdownClick}>
+                  <X className="close-show-nav-scroll" />
+                  <h1 className="catogory-headers">Close</h1>{" "}
+                </div>
+              </div>
+            ) : (
+              <h1 className="hide-header">hello</h1>
+            )}
+            <h1 className="catogory-headers">All</h1>
+            <h1 className="catogory-headers">Classic</h1>
+            <h1 className="catogory-headers">Professional</h1>
+
+            {/* <h1 className="catogory-headers">Watches by theme</h1> */}
+          </div>
+          <div className="configure">
+            <h1 className="configure-headers">Configure</h1>
+          </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+      {dropdown ? (
+        <motion.div
+          initial={{ y: "-100%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "-100%" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className={
+            dropdown ? "menu-dropdown common-menu" : "hide-menu-dropdown"
+          }
+        >
+          <div className="drop-menu-left">
+            <h1 className="drop-menu-headers">Rolex Watches</h1>
+            <h1 className="drop-menu-headers">Watchmaking</h1>
+            <h1 className="drop-menu-headers">About Rolex</h1>
+            <h1 className="drop-menu-headers">Rolex and sports</h1>
+            <h1 className="drop-menu-headers">Perpetual Initiatives</h1>
+            <h1 className="drop-menu-headers">Buying a Rolex</h1>
+            <h1 className="drop-menu-headers">Care and servicing</h1>
+          </div>
+          <div className="drop-menu-right">
+            <h1 className="drop-menu-headers none">Rolex Watches</h1>
+            <Swiper
+              slidesPerView={1}
+              centeredSlides={true}
+              spaceBetween={30}
+              pagination={{
+                type: "fraction",
+              }}
+              navigation={true}
+              modules={[Navigation]}
+              className="mySwiper"
+            >
+              {menuWatches &&
+                menuWatches.map((i) => (
+                  <SwiperSlide
+                    className="menu-img-parent menu-child-right"
+                    key={i.id}
+                  >
+                    <img src={i.img} alt="" className="menu-child-img" />
+                  </SwiperSlide>
+                ))}
+            </Swiper>
+          </div>
+        </motion.div>
+      ) : (
+        <motion.div
+          initial={{ y: 0 }}
+          animate={{ y: "-100%" }}
+          exit={{ y: 0, filter: "blur(10px)" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className={
+            dropdown ? "menu-dropdown common-menu" : "hide-menu-dropdown"
+          }
+        ></motion.div>
+      )}
+    </div>
   );
 };
 
