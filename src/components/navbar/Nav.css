@@ -287,10 +287,13 @@
   .category > h1,
   .configure > h1 {
     font-size: 10px;
+    font-weight: bold;
   }
   .catogory-headers{
     font-size: 8px !important;
     margin: 0px 10px !important;
+    font-weight: bold;
+
   }
 
   .category {
@@ -305,12 +308,16 @@
   .category > h1,
   .configure > h1 {
     font-size: 8px;
+    font-weight: bold;
+
   }
   .category {
     text-align: center;
   }
   .catogory-headers{
     font-size: 8px !important;
+    font-weight: bold;
+
   }
 
   .drop-menu-headers{
