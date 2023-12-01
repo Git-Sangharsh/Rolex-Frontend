@@ -26,8 +26,88 @@
   justify-content: space-evenly;
 }
 
-.drop-menu-headers{
-  color: #FFFFFF;
+.show-search,
+.hide-search {
+  position: absolute;
+  top: 110px;
+  z-index: 900;
+  width: 100%;
+  height: 200px;
+  background: rgb(12, 66, 42);
+  background: linear-gradient(
+    90deg,
+    rgba(12, 66, 42, 1) 0%,
+    rgba(18, 89, 57, 1) 69%,
+    rgba(47, 139, 97, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.child-show-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  border: none;
+  background-color: #ffffff36;
+  border-radius: 30px;
+  width: 400px;
+}
+
+.search-input {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 10px;
+  color: #ffffff;
+
+  padding: 15px;
+}
+
+::placeholder {
+  color: #ffffff;
+
+  font-style: italic;
+}
+
+.search-input:focus {
+  border: none;
+  outline: none;
+}
+
+.icon-class-search {
+  width: 30px;
+  color: whitesmoke;
+  margin: 0px 0px;
+  padding: 15px;
+}
+.hide-search {
+  position: absolute;
+  top: 110px;
+  width: 100%;
+  height: 200px;
+
+  background: rgb(12, 66, 42);
+  background: linear-gradient(
+    90deg,
+    rgba(12, 66, 42, 1) 0%,
+    rgba(18, 89, 57, 1) 69%,
+    rgba(47, 139, 97, 1) 100%
+  );
+  background-color: red;
+}
+.drop-menu-headers {
+  color: #ffffff;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 40px;
   font-style: normal;
@@ -37,7 +117,7 @@
   padding: 20px 0px;
 }
 
-.drop-menu-right{
+.drop-menu-right {
   width: 50vw;
   display: flex;
   align-items: center;
@@ -55,21 +135,21 @@
   user-select: none !important;
 }
 
-
-.swiper-button-prev, .swiper-button-next{
+.swiper-button-prev,
+.swiper-button-next {
   color: rgb(12, 66, 42);
   padding: 10px;
   color: white !important;
   background-color: transparent;
   width: 40px !important;
 }
-.menu-child-img{
+.menu-child-img {
   width: 100%;
   scale: 1.2;
   transition: 1s ease-in-out;
   padding-top: 20px;
 }
-.menu-child-img:hover{
+.menu-child-img:hover {
   scale: 1.3;
   cursor: grab;
 }
@@ -89,18 +169,18 @@
   );
 }
 
-.close-show-nav-scroll{
+.close-show-nav-scroll {
   color: red !important;
 }
 /* hiding close header */
-.hide-header{
+.hide-header {
   display: none;
 }
 
-.catogory-headers{
+.catogory-headers {
   cursor: pointer;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
-  font-weight: lighter
+  font-weight: lighter;
 }
 .nav-wrapper {
   display: flex;
@@ -147,7 +227,7 @@
   justify-content: center;
   width: 100%;
   height: 80px;
-  z-index: 1000;
+  z-index: 900;
   background-color: #ffffff;
   position: fixed;
 }
@@ -215,7 +295,7 @@
     width: 10px;
   }
 
-  .drop-menu-headers{
+  .drop-menu-headers {
     font-size: 16px;
   }
   .menu-header {
@@ -229,7 +309,8 @@
     height: 80px;
   }
 
-  .mySwiper, .none{
+  .mySwiper,
+  .none {
     display: none !important;
   }
   .headers {
@@ -278,6 +359,13 @@
   .configure > h1 {
     font-size: 14px;
   }
+
+
+.show-search,
+.hide-search {
+  top: 0px;
+  height: 150px;
+}
 }
 
 @media (max-width: 425px) {
@@ -289,16 +377,33 @@
     font-size: 10px;
     font-weight: bold;
   }
-  .catogory-headers{
+  .catogory-headers {
     font-size: 8px !important;
     margin: 0px 10px !important;
     font-weight: bold;
-
   }
 
   .category {
     text-align: center;
   }
+  .show-search,
+.hide-search {
+  top: 0px;
+  height: 100px;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  padding: 15px;
+}
+
+.child-show-search {
+  height: 30%;
+  width: 300px;
+}
 }
 
 @media (max-width: 375px) {
@@ -309,18 +414,16 @@
   .configure > h1 {
     font-size: 8px;
     font-weight: bold;
-
   }
   .category {
     text-align: center;
   }
-  .catogory-headers{
+  .catogory-headers {
     font-size: 8px !important;
     font-weight: bold;
-
   }
 
-  .drop-menu-headers{
+  .drop-menu-headers {
     width: 100%;
     font-size: 14px;
     padding: 10px 0px;
@@ -370,7 +473,26 @@
     text-align: center;
   }
 
-  .catogory-headers{
+  .catogory-headers {
     font-size: 10px !important;
+  }
+
+  .show-search,
+  .hide-search {
+    top: 0px;
+    height: 100px;
+  }
+
+  .search-input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    padding: 15px;
+  }
+
+  .child-show-search {
+    height: 30%;
+    width: 260px;
   }
 }

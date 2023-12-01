@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
 import rolexlogo from "../assets/rolexlogo.png";
-import { Search, MapPin, Heart, X } from "lucide-react";
+import { Search, MapPin, Heart, X, MoveRight } from "lucide-react";
 import { GanttChart } from "lucide-react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import api from "../api/Api";
@@ -24,6 +24,20 @@ const Nav = () => {
   const [secondNav, setSecondNav] = useState(false);
 
   const [menuWatches, setMenuWatches] = useState(false);
+
+  const [search, setSerach] = useState(false);
+
+  const constSearch = () => {
+    setSerach((prevDropdown) => {
+      console.log("dropdown is ", !prevDropdown);
+      document.documentElement.style.overflow = !prevDropdown
+        ? "hidden"
+        : "auto";
+      document.body.style.overflow = !prevDropdown ? "hidden" : "auto"; // For some older browsers
+      return !prevDropdown;
+    });
+    console.log("search is ", search);
+  };
 
   useEffect(() => {
     setMenuWatches(api);
@@ -88,7 +102,7 @@ const Nav = () => {
             <img src={rolexlogo} className="logoimage" alt="" />
           </div>
           <div className="search">
-            <div className="row">
+            <div className="row" onClick={constSearch}>
               <Search className="icon-class" />
               <h1 className="headers">Search</h1>
             </div>
@@ -134,10 +148,34 @@ const Nav = () => {
             <h1 className="configure-headers">Configure</h1>
           </div>
         </motion.div>
+        {search ? (
+        <motion.div
+          className={search ? "show-search" : "hide-search"}
+          initial={{ y: "-200%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "-100%" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <div className="child-show-search">
+            <input type="text" className="search-input" placeholder="Search" />
+            {/* <MoveRight className="icon-class-search"/> */}
+            <X className="icon-class-search " onClick={constSearch}/>
+
+          </div>
+        </motion.div>
+      ) : (
+        <motion.div
+          className={search ? "show-search" : "hide-search"}
+          initial={{ y: 0 }}
+          animate={{ y: "-200%" }}
+          exit={{ y: 0, filter: "blur(10px)" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        ></motion.div>
+      )}
       </motion.div>
       {dropdown ? (
         <motion.div
-          initial={{ y: "-100%" }}
+          initial={{ y: "-200%" }}
           animate={{ y: 0 }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -190,6 +228,7 @@ const Nav = () => {
           }
         ></motion.div>
       )}
+
     </div>
   );
 };
