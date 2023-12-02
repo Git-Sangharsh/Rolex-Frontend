@@ -149,23 +149,33 @@ const Nav = () => {
           </div>
         </motion.div>
         {search ? (
-          <motion.div
-            className={search ? "show-search" : "hide-search"}
-            initial={{ y: "-200%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-100%" }}
-            transition={{ duration: 0.5, ease: "easeInOut" }}
-          >
-            <div className="child-show-search">
-              <input
-                type="text"
-                className="search-input"
-                placeholder="Search"
-              />
-              {/* <MoveRight className="icon-class-search"/> */}
-              <X className="icon-class-search " onClick={constSearch} />
-            </div>
-          </motion.div>
+          <div>
+            <motion.div
+              className={search ? "show-search" : "hide-search"}
+              initial={{ y: "-200%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              <div className="child-show-search">
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="Search"
+                />
+                {/* <MoveRight className="icon-class-search"/> */}
+                <X className="icon-class-search " onClick={constSearch} />
+              </div>
+            </motion.div>
+
+            <motion.div
+              className={search ? "show-blur" : "hide-blur"}
+              initial={{ y: 0, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 0 }}
+              transition={{ duration: 1.2, ease: "easeInOut" }}
+            ></motion.div>
+          </div>
         ) : (
           <motion.div
             className={search ? "show-search" : "hide-search"}
