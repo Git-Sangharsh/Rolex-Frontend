@@ -205,14 +205,18 @@ const Nav = () => {
                     .slice(0, 1)
                     .map((i) => (
                       <div className="dropdown-headers" key={i.id}>
-                        <h1
+                        <motion.h1
+                          initial={{opacity: 0}}
+                          animate={{opacity: 1}}
+                          transition={{duration: 1, ease: 'easeInOut'}}
+                          exit={{ opacity: 0}}
                           className="suggestion-headers"
                           onClick={() => {
                             setSearchInput(i.name);
                           }}
                         >
                           {i.name}
-                        </h1>
+                        </motion.h1>
                       </div>
                     ))}
                 </div>
