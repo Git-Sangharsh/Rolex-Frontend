@@ -27,16 +27,31 @@ const Nav = () => {
 
   const [search, setSerach] = useState(false);
 
+  const [searchInput, setSearchInput] = useState("");
+
+  const inputValue = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const inputSubmit = (e) => {
+    if (e.key === "Enter") {
+      console.log(searchInput);
+    }
+  };
+
   const constSearch = () => {
     setSerach((prevDropdown) => {
-      console.log("dropdown is ", !prevDropdown);
+      if (search === false) {
+        setSearchInput("");
+      }
+      // console.log("dropdown is ", !prevDropdown);
       document.documentElement.style.overflow = !prevDropdown
         ? "hidden"
         : "auto";
       document.body.style.overflow = !prevDropdown ? "hidden" : "auto"; // For some older browsers
       return !prevDropdown;
     });
-    console.log("search is ", search);
+    // console.log("search is ", search);
   };
 
   useEffect(() => {
@@ -157,14 +172,50 @@ const Nav = () => {
               exit={{ y: "-100%" }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              <div className="child-show-search">
-                <input
-                  type="text"
-                  className="search-input"
-                  placeholder="Search"
-                />
-                {/* <MoveRight className="icon-class-search"/> */}
-                <X className="icon-class-search " onClick={constSearch} />
+              <div className="child-show-parent">
+                <div className="child-show-search">
+                  <input
+                    type="text"
+                    className="search-input"
+                    placeholder="Search"
+                    onChange={inputValue}
+                    value={searchInput}
+                    onKeyPress={inputSubmit}
+                  />
+                  {/* <MoveRight className="icon-class-search"/> */}
+
+                  <Search className="icon-class-search" onClick={constSearch} />
+                  <X
+                    className="icon-class-search"
+                    style={{
+                      paddingLeft: "0px",
+                    }}
+                    onClick={constSearch}
+                  />
+                </div>
+
+                <div className="suggestions">
+                  {menuWatches
+                    .filter((item) => {
+                      const searchTerm = searchInput.toLowerCase();
+                      const name = item.name.toLowerCase();
+
+                      return searchTerm && name.startsWith(searchTerm);
+                    })
+                    .slice(0, 1)
+                    .map((i) => (
+                      <div className="dropdown-headers" key={i.id}>
+                        <h1
+                          className="suggestion-headers"
+                          onClick={() => {
+                            setSearchInput(i.name);
+                          }}
+                        >
+                          {i.name}
+                        </h1>
+                      </div>
+                    ))}
+                </div>
               </div>
             </motion.div>
 
