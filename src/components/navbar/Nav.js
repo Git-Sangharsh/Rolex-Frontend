@@ -5,8 +5,7 @@ import { Search, MapPin, Heart, X } from "lucide-react";
 import { GanttChart } from "lucide-react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import api from "../api/Api";
-
-// Import Swiper
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -215,7 +214,9 @@ const Nav = () => {
                             setSearchInput(i.name);
                           }}
                         >
+                          <Link to={`/search-${i.name}`} >
                           {i.name}
+                          </Link>
                         </motion.h1>
                       </div>
                     ))}

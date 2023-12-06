@@ -13,6 +13,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-parallax": "^3.5.1",
+    "react-router-dom": "^6.20.1",
     "react-scripts": "5.0.1",
     "swiper": "^11.0.5",
     "swiper-react": "^1.0.0",

@@ -109,7 +109,10 @@
   padding: 15px ;
 }
 
-
+a{
+  text-decoration: none !important;
+  color: #f7f7f7;
+}
 
 .suggestions{
   overflow: hidden;

@@ -1,0 +1,44 @@
+.view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.view-wrapper {
+  margin-top: 150px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 85%;
+}
+
+.view-map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #f8f8f8;
+  width: 90%;
+  height: 80%;
+}
+
+.view-map-headers {
+    margin-left: 20px;
+}
+.view-h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: rgb(57, 56, 56);
+  font-size: 20px;
+  margin: 0;
+  padding: 0 0 10px 0;
+
+}
+
+.view-h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  color: rgb(135, 135, 135);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: visible;
+}
