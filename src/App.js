@@ -8,6 +8,8 @@ import Footer from "./components/footer/Footer";
 import { Helmet } from "react-helmet";
 import Watchesview from "./components-two/Watchesview/Watchesview";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Fav from "./components-two/fav/Fav";
+import Admin from "./components/admin/Admin";
 
 const App = () => {
   return (
@@ -29,10 +31,33 @@ const App = () => {
               </div>
             }
           />
-          <Route path=":id" element={<div>
-            <Nav />
-            <Watchesview />
-          </div>}/>
+          <Route
+            path="/admin"
+            element={
+              <div>
+                <Admin />
+              </div>
+            }
+          />
+          <Route
+            path=":id"
+            element={
+              <div>
+                <Nav />
+                <Watchesview />
+                <Watchesview />
+              </div>
+            }
+          />
+          <Route
+            path=":id/:id"
+            element={
+              <div>
+                <Nav />
+                <Fav />
+              </div>
+            }
+          />
         </Routes>
       </div>
     </Router>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Nav.css";
 import rolexlogo from "../assets/rolexlogo.png";
-import { Search, MapPin, Heart, X } from "lucide-react";
+import { Search, MapPin, X, LockKeyhole } from "lucide-react";
 import { GanttChart } from "lucide-react";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import api from "../api/Api";
@@ -107,7 +107,7 @@ const Nav = () => {
               </div>
             ) : (
               <div className="row " onClick={dropdownClick}>
-                <GanttChart className="icon-class" />
+                <GanttChart className="icon-class" size={20}/>
                 <h1 className="headers">Menu</h1>
               </div>
             )}
@@ -117,16 +117,18 @@ const Nav = () => {
           </div>
           <div className="search">
             <div className="row" onClick={constSearch}>
-              <Search className="icon-class" />
+              <Search className="icon-class" size={20}/>
               <h1 className="headers">Search</h1>
             </div>
             <div className="row">
-              <MapPin className="icon-class" />
+              <MapPin className="icon-class" size={20}/>
               <h1 className="headers">Store locator</h1>
             </div>
             <div className="row">
-              <Heart className="icon-class" />
-              <h1 className="headers">Favourites</h1>
+              <Link to={'/admin'} className="row">
+              <LockKeyhole className="icon-class" size={20}/>
+              <h1 className="headers">Admin</h1>
+              </Link>
             </div>
           </div>
         </div>
@@ -183,7 +185,12 @@ const Nav = () => {
                   />
                   {/* <MoveRight className="icon-class-search"/> */}
 
-                  <Search className="icon-class-search" onClick={constSearch} />
+                  <Link to={`/search-Watches`}>
+                    <Search
+                      className="icon-class-search"
+                      onClick={constSearch}
+                    />
+                  </Link>
                   <X
                     className="icon-class-search"
                     style={{
@@ -198,25 +205,22 @@ const Nav = () => {
                     .filter((item) => {
                       const searchTerm = searchInput.toLowerCase();
                       const name = item.name.toLowerCase();
-
                       return searchTerm && name.startsWith(searchTerm);
                     })
                     .slice(0, 1)
                     .map((i) => (
                       <div className="dropdown-headers" key={i.id}>
                         <motion.h1
-                          initial={{opacity: 0}}
-                          animate={{opacity: 1}}
-                          transition={{duration: 1, ease: 'easeInOut'}}
-                          exit={{ opacity: 0}}
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 1, ease: "easeInOut" }}
+                          exit={{ opacity: 0 }}
                           className="suggestion-headers"
                           onClick={() => {
                             setSearchInput(i.name);
                           }}
                         >
-                          <Link to={`/search-${i.name}`} >
-                          {i.name}
-                          </Link>
+                          <Link to={`/search-${i.name}`}>{i.name}</Link>
                         </motion.h1>
                       </div>
                     ))}
@@ -257,7 +261,7 @@ const Nav = () => {
             <h1 className="drop-menu-headers">Watchmaking</h1>
             <h1 className="drop-menu-headers">About Rolex</h1>
             <h1 className="drop-menu-headers">Rolex and sports</h1>
-            <h1 className="drop-menu-headers">Perpetual Initiatives</h1>
+            <h1 className="drop-menu-headers">Admin</h1>
             <h1 className="drop-menu-headers">Buying a Rolex</h1>
             <h1 className="drop-menu-headers">Care and servicing</h1>
           </div>

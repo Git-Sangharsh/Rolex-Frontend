@@ -554,7 +554,6 @@ a{
   .hide-second-nav {
     height: 60px;
     z-index: -1000 !important;
-    border: 2px solid red;
   }
   .category > h1,
   .configure > h1 {

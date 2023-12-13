@@ -35,5 +35,6 @@ const Assetsapi = [
     title: "Datejust 36",
     desc: "Oyster, 36mm, OysterSteel and Everose gold",
   },
+  
 ];
 export default Assetsapi;

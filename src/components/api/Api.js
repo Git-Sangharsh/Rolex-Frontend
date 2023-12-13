@@ -163,6 +163,16 @@ const api = [
     clr: "white",
     responsive: height14
   },
+  {
+    id: 15,
+    img: watch14,
+    name: "data",
+    description: "data",
+    more: "Discover more >",
+    clr: "white",
+    responsive: height14
+  },
+
 ];
 
 export default api;
