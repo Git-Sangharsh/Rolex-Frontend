@@ -28,7 +28,7 @@ const Admin = () => {
             adminTitle: title,
             adminDesc: desc
         }
-        axios.post('http://localhost:5000/admin', watchData)
+        axios.post('https://rolex-backend.onrender.com/admin', watchData)
         .then((response) => {
             console.log(response.data)
             setImage("");

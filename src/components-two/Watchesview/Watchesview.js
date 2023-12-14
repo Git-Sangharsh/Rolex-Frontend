@@ -10,7 +10,7 @@ const Watchesview = () => {
 
   const fetchData = () => {
     axios
-      .get("http://localhost:5000/fetchrolex")
+      .get("https://rolex-backend.onrender.com/fetchrolex")
       .then((response) => {
         console.log(response.data);
         setFetch(response.data);
