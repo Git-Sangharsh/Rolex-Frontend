@@ -107,7 +107,7 @@ const Nav = () => {
               </div>
             ) : (
               <div className="row " onClick={dropdownClick}>
-                <GanttChart className="icon-class" size={20}/>
+                <GanttChart className="icon-class" size={20} />
                 <h1 className="headers">Menu</h1>
               </div>
             )}
@@ -117,17 +117,17 @@ const Nav = () => {
           </div>
           <div className="search">
             <div className="row" onClick={constSearch}>
-              <Search className="icon-class" size={20}/>
+              <Search className="icon-class" size={20} />
               <h1 className="headers">Search</h1>
             </div>
             <div className="row">
-              <MapPin className="icon-class" size={20}/>
+              <MapPin className="icon-class" size={20} />
               <h1 className="headers">Store locator</h1>
             </div>
             <div className="row">
-              <Link to={'/admin'} className="row">
-              <LockKeyhole className="icon-class" size={20}/>
-              <h1 className="headers">Admin</h1>
+              <Link to={"/admin"} className="row">
+                <LockKeyhole className="icon-class" size={20} />
+                <h1 className="headers">Admin</h1>
               </Link>
             </div>
           </div>
@@ -184,20 +184,38 @@ const Nav = () => {
                     onKeyPress={inputSubmit}
                   />
                   {/* <MoveRight className="icon-class-search"/> */}
-
-                  <Link to={`/search-Watches`}>
-                    <Search
-                      className="icon-class-search"
-                      onClick={constSearch}
-                    />
-                  </Link>
-                  <X
-                    className="icon-class-search"
-                    style={{
-                      paddingLeft: "0px",
-                    }}
-                    onClick={constSearch}
-                  />
+                  {searchInput.length > 0 ? (
+                    <div style={{ display: "flex" }}>
+                      <Link to={`/search-Watches`}>
+                        <Search
+                          className="icon-class-search"
+                          onClick={constSearch}
+                        />
+                      </Link>
+                      <X
+                        className="icon-class-search"
+                        style={{
+                          paddingLeft: "0px",
+                        }}
+                        onClick={constSearch}
+                      />
+                    </div>
+                    
+                  ) : (
+                    <div style={{ display: "flex" }}>
+                      <Search
+                        className="icon-class-search"
+                        onClick={constSearch}
+                      />
+                      <X
+                        className="icon-class-search"
+                        style={{
+                          paddingLeft: "0px",
+                        }}
+                        onClick={constSearch}
+                      />
+                    </div>
+                  )}
                 </div>
 
                 <div className="suggestions">
